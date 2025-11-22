@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  min-height: 100vh;
+  background: #f9fafb;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+.app.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+
+.dark-mode .auth-container {
+  background: #111827;
+}
+
+.dark-mode .auth-left {
+  background: #111827;
+}
+
+.dark-mode .app-title,
+.dark-mode .auth-form h2,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4 {
+  color: #f9fafb !important;
+}
+
+.dark-mode .auth-subtitle,
+.dark-mode .page-date,
+.dark-mode p {
+  color: #9ca3af !important;
+}
+
+.dark-mode .form-group label {
+  color: #d1d5db !important;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+  background: #1f2937;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+.dark-mode .form-group input::placeholder,
+.dark-mode .form-group select::placeholder,
+.dark-mode .form-group textarea::placeholder {
+  color: #6b7280;
+}
+
+.dark-mode .auth-right {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+}
+
+.dark-mode .preview-card,
+.dark-mode .member-card,
+.dark-mode .stat-card,
+.dark-mode .chart-card,
+.dark-mode .recent-tasks-section,
+.dark-mode .create-task-container,
+.dark-mode .task-card,
+.dark-mode .team-card {
+  background: #1f2937 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .sidebar {
+  background: #1f2937;
+  border-right-color: #374151;
+}
+
+.dark-mode .nav-item {
+  color: #9ca3af;
+}
+
+.dark-mode .nav-item:hover {
+  background: #374151;
+  color: #f9fafb;
+}
+
+.dark-mode .nav-item.active {
+  background: #1e40af;
+  color: #ffffff;
+}
+
+.dark-mode .dashboard-layout {
+  background: #111827;
+}
+
+.dark-mode .main-content {
+  background: #111827;
+}
+
+.dark-mode .tasks-table th {
+  color: #9ca3af;
+  border-bottom-color: #374151;
+}
+
+.dark-mode .tasks-table td {
+  color: #d1d5db;
+  border-bottom-color: #374151;
+}
+
+.dark-mode .tasks-table tr:hover {
+  background: #374151;
+}
+
+.dark-mode .btn-add,
+.dark-mode .btn-add-members {
+  background: #374151;
+  color: #d1d5db;
+  border-color: #4b5563;
+}
+
+.dark-mode .btn-add:hover,
+.dark-mode .btn-add-members:hover {
+  background: #4b5563;
+}
+
+.dark-mode .filter-tab {
+  background: #1f2937;
+  border-color: #374151;
+  color: #9ca3af;
+}
+
+.dark-mode .filter-tab:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.dark-mode .password-toggle {
+  color: #9ca3af;
+}
+
+.dark-mode .task-dates label,
+.dark-mode .stat-label {
+  color: #9ca3af !important;
+}
+
+.dark-mode .task-dates span,
+.dark-mode .stat-value {
+  color: #f9fafb !important;
+}
+
+.dark-mode .chart-tooltip {
+  background: #1f2937;
+  color: #f9fafb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .tooltip-title {
+  color: #f9fafb;
+}
+
+.dark-mode .tooltip-tasks {
+  color: #9ca3af;
+}
+
+.dark-mode .avatar-placeholder {
+  background: #374151;
+}
+
+.dark-mode .avatar-placeholder:hover {
+  background: #4b5563;
+}
+
+.dark-mode .member-list-item {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.dark-mode .member-list-item:hover {
+  background: #4b5563;
+}
+
+.dark-mode .todo-item {
+  border-bottom-color: #374151;
+}
+
+.dark-mode .attachment-item {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  transition: all 0.2s;
+  z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
+}
+
+.dark-mode .dark-mode-toggle {
+  background: #1e40af;
+}
+
+
+body.menu-open {
+  overflow: hidden;
+}
+
+
+@media (max-width: 968px) {
+  .dark-mode-toggle {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dark-mode-toggle {
+    bottom: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+  }
+}
