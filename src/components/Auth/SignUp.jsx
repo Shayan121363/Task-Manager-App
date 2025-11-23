@@ -1,9 +1,44 @@
-import React, { useState } from 'react';
-import { Eye, EyeOff, Upload } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Eye, EyeOff, Upload, Moon, Sun, Camera } from 'lucide-react';
 import './SignUp.css';
 
-const SignUp = ({ setCurrentPage }) => {
+const SignUp = ({ setCurrentPage, darkMode, setDarkMode, handleFileUpload }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [avatarPreview, setAvatarPreview] = useState(null);
+  const fileInputRef = useRef(null);
+
+  const handleAvatarClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      
+      if (!file.type.startsWith('image/')) {
+        alert('Please select an image file');
+        return;
+      }
+      
+     
+      if (file.size > 5 * 1024 * 1024) {
+        alert('File size should be less than 5MB');
+        return;
+      }
+
+     
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setAvatarPreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+
+     
+      if (handleFileUpload) {
+        handleFileUpload(file);
+      }
+    }
+  };
 
   return (
     <div className="auth-container">
@@ -14,9 +49,24 @@ const SignUp = ({ setCurrentPage }) => {
           <p className="auth-subtitle">Join us today by entering your details below.</p>
           
           <div className="avatar-upload">
-            <div className="avatar-placeholder">
-              <Upload size={24} />
+            <div className="avatar-placeholder" onClick={handleAvatarClick}>
+              {avatarPreview ? (
+                <img src={avatarPreview} alt="Avatar preview" className="avatar-preview-img" />
+              ) : (
+                <>
+                  <Upload size={24} className="upload-icon" />
+                  <Camera size={16} className="camera-icon" />
+                </>
+              )}
             </div>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              style={{ display: 'none' }}
+            />
+            <p className="avatar-upload-text">Click to upload photo</p>
           </div>
           
           <div className="form-row">
@@ -105,6 +155,10 @@ const SignUp = ({ setCurrentPage }) => {
           </div>
         </div>
       </div>
+
+      <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
+        {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+      </button>
     </div>
   );
 };
