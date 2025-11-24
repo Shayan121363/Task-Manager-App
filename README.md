@@ -8,8 +8,8 @@ A modern, responsive, and feature-rich task management web application built wit
 
 | Name | Roll No | Responsibilities |
 |------|---------|-----------------|
-| **Shayan Ahmed** | 044 | Authentication (Login/SignUp), Dashboard, Sidebar Navigation, Dark Mode Implementation, Responsive Design |
-| **Saym Asif** | 036 | Task Management (Create Task, Manage Tasks), Team Members Module, Responsive Design |
+| **Shayan Ahmed** | 044 | Authentication (Login/SignUp), Dashboard, Task Management (Create Task, Manage Tasks), Dark Mode Implementation, Responsive Design |
+| **Saym Asif** | 034 | Sidebar Navigation, Team Members Module, Responsive Design |
 
 ---
 
@@ -43,10 +43,10 @@ The Task Manager Application is a comprehensive project management tool designed
 | **Login Page** | User authentication and login functionality with form validation | Shayan Ahmed (044) |
 | **Sign Up Page** | New user registration with avatar upload and invite token system | Shayan Ahmed (044) |
 | **Dashboard** | Overview of all tasks with statistics, charts (donut & bar), and recent tasks display | Shayan Ahmed (044) |
-| **Sidebar Navigation** | Main navigation menu with user profile and page routing | Shayan Ahmed (044) |
+| **Sidebar Navigation** | Main navigation menu with user profile and page routing | Saym Asif (034) |
 | **Create Task** | Form to create new tasks with title, description, priority, due date, team members, todos, and attachments | Saym Asif (036) |
-| **Manage Tasks** | View, filter, update status, check/uncheck todos, and delete tasks | Saym Asif (036) |
-| **Team Members** | Display team members with their task statistics (pending, in-progress, completed) | Saym Asif (036) |
+| **Manage Tasks** | View, filter, update status, check/uncheck todos, and delete tasks | Saym Asif (034) |
+| **Team Members** | Display team members with their task statistics (pending, in-progress, completed) | Saym Asif (034) |
 | **Dark Mode** | Toggle between light and dark themes across all pages | Shayan Ahmed (044) |
 | **Responsive Design** | Mobile-first responsive design with slide-in navigation for mobile devices | Both Members |
 
@@ -154,6 +154,7 @@ The Task Manager Application is a comprehensive project management tool designed
 2. **Navigate to project directory**
    ```bash
    cd Task-Manager-App
+   cd frontend
    ```
 
 3. **Install dependencies**
